@@ -1,0 +1,488 @@
+\documentclass[serif]{beamer}
+\usetheme{Boadilla}
+\usepackage{graphicx}
+\usepackage[final]{animate}
+\usepackage{breqn}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{shapes,arrows,positioning,shadows}
+\usepackage{subfig}
+\usepackage{pgf}
+
+% change format of enumerated lists
+\setbeamertemplate{enumerate items}[default]
+
+\setbeamertemplate{navigation symbols}{}
+
+% tikz objects
+\tikzstyle{decision} = [diamond, draw, text width=6em, text badly centered, inner sep=2pt, top color=white, bottom color=zissou3]
+\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=3em, minimum width=8em, top color = white, bottom color=zissou3]
+\tikzstyle{declare} = [rectangle, draw, text width=10em, text centered, minimum height=3em, minimum width=8em, top color = white, bottom color=zissou3]
+
+% macros
+\newcommand{\emtxt}[1]{\textbf{\textit{#1}}}
+
+% knitr setup
+<<setup, include = F, cache = F>>=
+# set global chunk options
+opts_chunk$set(fig.path='fig/', fig.align='center', fig.show='hold',message=F,echo=F,results='asis',dev='pdf',dev.args=list(family='serif'),fig.pos='!ht',warning=F)
+options(replace.assign=T,width=90,digits=1)
+@
+
+% dependent data
+<<dep_dat, include = F, cache = F>>=
+source('R/funcs.R')
+@
+
+% custom colors
+<<mypal, echo = F, results = 'asis', cache = T>>=
+pal <- function(x) brewer.pal(x, 'BuGn')
+num_col <- 5
+
+for(i in 1:num_col){
+ 
+  col.nm <- paste0('mypal',i)
+  hexa <- paste0(gsub('#', '', pal(5)[i]))
+  cat(paste0('\\definecolor{', col.nm,'}{HTML}{',hexa,'}'))
+  
+}
+
+bg_col <- scales::alpha(pal(num_col)[3], 0.3)
+
+pdf('fig/back_tmp.pdf',bg = bg_col)
+frame()
+invisible(dev.off())
+
+@
+
+% my custom ggplot theme
+<<my_ggplot, echo = F, results = 'hide' , message = F>>=
+theme_mine <- function (base_size = 12, base_family = "") {
+  theme_bw(base_size = base_size, base_family = base_family) %+replace% 
+  theme(
+    plot.background = element_rect(fill='transparent', 
+      colour = NA),
+    panel.background = element_rect(fill='transparent', 
+      colour = NA),
+    legend.background = element_rect(fill='transparent', 
+      colour = NA),
+    strip.background = element_rect(fill = 
+        alpha(pal(5)[5],0.5)),
+    legend.key = element_rect(fill = 'transparent', 
+      colour = NA)
+    )   
+}
+
+# set as default
+theme_set(theme_mine())
+@
+
+\setbeamercolor{title}{fg=mypal5} % main title
+\setbeamercolor{frametitle}{fg=mypal4, bg=mypal2} % frame titles
+\setbeamercolor{structure}{fg=mypal4} % bottom banner
+\setbeamercolor{normal text}{fg=mypal5}
+\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{fig/back_tmp.pdf}}
+
+\begin{document}
+
+\title[Evaluating water quality]{\textbf{A quantitative and reproducible approach to evaluate trends in seagrass indicators}}
+\author[M. Beck]{Dr. Marcus W. Beck}
+
+\institute[USEPA]{ORISE post-doc, USEPA National Health and Environmental Effects Research Laboratory, Gulf Ecology Division, \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov}, Phone: 8509342480}
+
+\date{Dec. 15, 2014}
+
+\titlegraphic{
+\centerline{
+\begin{tikzpicture}
+  \node[drop shadow={shadow xshift=0ex, shadow yshift=0ex}, fill=white,draw] at (0,0) {\includegraphics[width=0.8\textwidth]{fig/title_pic.png}};
+\end{tikzpicture}
+}}
+
+%%%%%%
+\begin{frame}[shrink]
+\titlepage
+\end{frame}
+
+\section{Background}
+
+%%%%%%
+\begin{frame}{\textbf{Managing coastal waters}}{\textbf{How do we use data?}}
+The foundation of most management programs is a strong monitoring network \\~\\
+Monitoring provides information for decision-making based on apparent trends...
+\vspace{0.2in}
+\begin{center}
+\emtxt{What are the changes in environmental condition over time?}\\~\\
+\emtxt{Are these changes `good' or `bad' based on our management objectives?}\\~\\
+\emtxt{What may have caused these changes?}
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Managing coastal waters}}{\textbf{How do we use data?}}
+\emtxt{The good news}: We are getting better at monitoring - standardized, automated, increased coverage, real-time/continuous \\~\\
+\emtxt{The bad news}: Our ability to use these data for decision-making has not kept pace with availability! \\~\\
+<<theo, fig.height = 3.25, fig.width = 5, out.width = '0.55\\textwidth'>>=
+par(mar = c(4, 4, 0.5, 0.5), family = 'serif')
+x <- seq(1,100)
+y1 <- x^2
+y2 <- 4000 + 10*x
+plot(x, y1, type = 'l', xlab = 'Time', ylab = 'Relative quantities', axes = F, col = pal(5)[4], lty = 2, lwd = 2)
+lines(x, y2, col = pal(5)[4], lty = 1, lwd = 2)
+axis(side = 1, c(1, 100), labels = F)
+axis(side = 2, c(1, 100^2), labels = F)
+legend('topleft', lty = c(2,1), lwd = c(2,2), legend= c('Data', 'Analysis tools'), col = c(pal(5)[4], pal(5)[4]), bty = 'n')
+@
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Managing coastal waters}}{\textbf{How do we use data?}}
+\onslide<+->
+We have the data but... \\~\\
+\emtxt{Challenge 1:} We may not know how to use the information for decision-making \\~\\
+\emtxt{Challenge 2:} We often lack appropriate tools to unambiguously and quantitatively characterize trends \\~\\
+\emtxt{Challenge 3:} We may not have indicators to assess progress towards management goals \\~\\
+\onslide<+->
+These challenges are not impossible...\\~\\
+\emtxt{Solution:} The use of open-science tools can facilitate data acquisition, collaboration, and communication!
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+\onslide<+->
+Seagrasses have long been considered sentinels of water quality \\~\\
+Numerous ecosystem services - healthy seagrass, healthy eastuary \\~\\
+The following example illustrates the use of open-science tools to \emtxt{integrate}, \emtxt{assess}, and \emtxt{communicate} data for evaluating seagrass indicators \\~\\
+\onslide<+->
+Open-science is \emtxt{reproducible}, \emtxt{transparent}, and \emtxt{collaborative}!
+\begin{columns}
+\begin{column}{0.2\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
+\end{column}
+\begin{column}{0.2\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/RStudio.png}}
+\end{column}
+\begin{column}{0.2\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/knit-logo.png}}
+\end{column}
+\begin{column}{0.2\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/octocat.png}}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+\onslide<+->
+The maximum depth of colonization is a useful indicator of water clarity - biologically-based and related to numerous response endpoints \\~\\
+Often used as a basis for establishing nutrient criteria \\~\\
+\onslide<+->
+\emtxt{Problem 1:} No consensus on the best way to measure depth of colonization\\~\\
+\emtxt{Problem 2:} Plenty of data are available but standardized techniques have not been developed
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+\onslide<+->
+\emtxt{Objective:} Develop a reproducible and empirical method for estimating depth of colonization that leverages multiple data sources
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+<</segmap, fig.height = 4, fig.width = 4, echo = F, results = 'hold', cache = T>>=
+segs <- readShapeSpatial('data/segs.shp')
+state <- readShapeSpatial('data/FL_state.shp')
+
+par(mar = c(0, 0, 2, 0), family = 'serif')
+sp::plot(state, col = pal(5)[3])
+sp::plot(segs, col = pal(5)[2], add = T)
+title('Segment-based approach', line = 0, cex.main = 1.4)
+@
+\end{column}
+\begin{column}{0.45\textwidth}
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/Charlotte_Estuary_Segments.jpg}}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
+\onslide<+->
+How can we estimate depth of colonization? \\~\\
+\begin{columns}[T]
+\onslide<+->
+\begin{column}{0.32\textwidth}
+Pick a segment\\~\\
+\centerline{\includegraphics[width = 0.9\textwidth]{fig/map820.png}}
+\end{column}
+\onslide<+->
+\begin{column}{0.32\textwidth}
+Get seagrass coverage
+<</segsg, fig.height = 4, fig.width = 4, echo = F, results = 'hold', cache = T>>=
+seg <- readShapeSpatial('data/seg_820.shp')
+state <- readShapeSpatial('data/FL_state.shp')
+sgpoly <- readShapeSpatial('data/bbend_sg_diss.shp')
+
+par(mar=c(0,0,0,0))
+sp::plot(seg, border = 'white')
+sp::plot(sgpoly, add = T, col = pal(5)[5], border = NA)
+sp::plot(state, add = T, col = pal(5)[3])
+sp::plot(seg, add = T)
+@
+\end{column}
+\onslide<+->
+\begin{column}{0.32\textwidth}
+Get depth points\\~\\
+<</segpt, fig.height = 4, fig.width = 4, echo = F, results = 'hold', cache = T>>=
+sgrass <- readShapeSpatial('data/sgpts_820_2006.shp')
+sgrass <- sgrass[sample(1:nrow(sgrass), 2000, replace = F),]
+
+seg <- readShapeSpatial('data/seg_820.shp')
+state <- readShapeSpatial('data/FL_state.shp')
+
+par(mar=c(0,0,0,0))
+sp::plot(seg)
+sp::plot(state, add = T, col = pal(5)[3])
+points(sgrass, col = alpha(pal(5)[5], 0.5), pch =16, cex = 0.6)
+@
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
+\onslide<+->
+How can we estimate depth of colonization? \\~\\
+<<'/sg_est_ex', fig.height = 5, fig.width = 9, out.width = '\\textwidth'>>=
+load( 'data/sgpts820.RData')
+dat <- doc_est(data.frame(sgpts820))
+
+to_plo <- dat$data
+
+# base plot if no estimate is available
+p2 <- ggplot(to_plo, aes(x = Depth, y = sg_prp)) +
+  geom_point(pch = 1, size = 4) +
+  theme(text = element_text(size=20)) +
+  ylab('Proportion of points with seagrass') +
+  xlab('Depth (m)')
+
+# get y value from est_fun for sg_max and doc_med
+yends <- try({
+  with(dat, est_fun(c(sg_max, doc_med)))
+  })
+
+to_plo2 <- dat$preds
+to_plo3 <- dat$est_fun
+to_plo4 <- data.frame(
+  Depth = with(dat, c(sg_max, doc_med, doc_max)), 
+  yvals = rep(0, 3)
+)
+
+# some formatting crap
+x_lims <- max(1.1 * max(na.omit(to_plo4)$Depth), 1.1 * dat$doc)
+pt_cols <- brewer.pal(nrow(to_plo4), 'Blues')
+leg_lab <- paste0(
+  c('SG max (', 'DOC med (', 'DOC max ('),
+  round(to_plo4$Depth, 2), 
+  rep(')', 3)
+)
+
+# the plot
+p2 <- p2 +
+  geom_line(data = to_plo2, 
+    aes(x = Depth, y = sg_prp)
+    ) +
+  scale_y_continuous(limits = c(0, 1.1 * max(to_plo2$sg_prp))) + 
+  scale_x_continuous(limits = c(min(to_plo$Depth), 1.1 * x_lims)) + 
+  stat_function(fun = to_plo3, colour = 'lightgreen', size = 1.5, 
+    alpha = 0.6) +
+  geom_segment(x = dat$sg_max, y = 0, xend = dat$sg_max, 
+    yend = yends[1], linetype = 'dashed', colour = 'lightgreen',
+    size = 1.5, alpha = 0.6) +
+  geom_segment(x = dat$doc_med, y = 0, xend = dat$doc_med, 
+    yend = yends[2], linetype = 'dashed', colour = 'lightgreen',
+    size = 1.5, alpha = 0.6) +
+  geom_point(data = to_plo4, 
+    aes(x = Depth, y = yvals, fill = factor(Depth)), 
+    size = 6, pch = 21) +
+  scale_fill_brewer('Depth estimate (m)', 
+    labels = leg_lab,
+    palette = 'Blues'
+    ) +
+  theme(legend.position = c(1, 1),
+    legend.justification = c(1, 1))
+p2
+
+@
+\end{frame}
+
+<<sgdepthall, echo = F, eval = F>>=
+# seagrass depth of col ests
+load('data/sg_dat.RData')
+sg_dat <- lapply(split(sg_dat, sg_dat$SEGID), function(x) x[nrow(x), ])
+sg_dat <- do.call('rbind', sg_dat)
+
+# combine depth of col with segment locations
+segs <- readShapeSpatial('data/segs.shp')
+centroids <- gCentroid(segs, byid = T)
+segs$SEGID <- as.numeric(as.character(segs$SEGID))
+
+segs <- merge(segs, sg_dat, by = 'SEGID')
+segs <- data.frame(segs, data.frame(centroids))
+segs <- na.omit(segs[, c('SEGID', 'ZcMax', 'x', 'y')])
+
+# state
+state <- readShapeSpatial('data/FL_state.shp')
+
+# get points/size for plots
+col.pts <- colorRampPalette(pal(5))(nrow(segs))[rank(segs$ZcMax)]
+rsc.pts<-scales::rescale(segs$ZcMax,c(1,7))
+
+leg.text<-round(quantile(segs$ZcMax,c(0,0.33,0.66,1)),1)
+leg.cex<-seq(0.7,5,length=4)
+leg.col<-colorRampPalette(pal(5))(4)
+
+# plot
+pdf('fig/sgdepthall.pdf', family = 'serif', height = 7, width = 7)
+par(mar = c(0, 0, 0, 0), family = 'serif')
+
+sp::plot(state, col = alpha(pal(5)[3], 0.5))
+points(segs$x, segs$y, pch = 21, bg = col.pts, cex = rsc.pts)
+legend(-87,28,legend=leg.text,pt.cex=leg.cex,col=alpha('black',0.75),title='Maximum seagrass depth (m)',pch=21,bty='n',cex=1.4,y.intersp=1.4,pt.bg=leg.col,x.intersp=1.3)
+dev.off()
+@
+
+%%%%%%
+\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
+We can get an estimate of seagrass depth of colonization for each segment in Florida \scriptsize [Hagy et al., in prep]
+\vspace{-0.25in}
+\centerline{\includegraphics[width = 0.55\textwidth]{fig/sgdepthall.pdf}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\onslide<+->
+This approach works if the segment is an appropriate spatial unit to characterize seagrass...
+\begin{columns}[T]
+\onslide<+->
+\begin{column}{0.45\textwidth}
+<</docfail1, fig.height = 4, fig.width = 4, echo = F, results = 'hold', cache = T>>=
+seg <- readShapeSpatial('data/seg_820.shp')
+state <- readShapeSpatial('data/FL_state.shp')
+sgrass <- readShapeSpatial('data/sgpts_820_2006.shp')
+sgrass <- sgrass[sample(1:nrow(sgrass), 2000, replace = F),]
+above <- sgrass[sgrass$GRID_CODE >= -2.619, ]
+below <- sgrass[sgrass$GRID_CODE < -2.619, ]
+
+par(mar=c(0,0,0,0))
+sp::plot(seg, border = 'white')
+sp::plot(state, add = T, col = pal(5)[3])
+sp::plot(seg, add = T)
+points(above, col = alpha(pal(5)[5], 0.5), pch = 16, cex = 0.6)
+points(below, col = alpha('black', 0.5), pch = 21, cex = 0.6)
+legend('bottomleft', legend = c('Within max depth estimate', 'Beyond max depth estimate'), col = c(alpha(pal(5)[5], 0.5), alpha('black', 0.5)), pch = c(16, 21), border = white)
+@
+\end{column}
+\onslide<+->
+\begin{column}{0.45\textwidth}
+<</docfail2, fig.height = 4, fig.width = 4, echo = F, results = 'hold', cache = T>>=
+seg <- readShapeSpatial('data/seg_820.shp')
+state <- readShapeSpatial('data/FL_state.shp')
+sgpoly <- readShapeSpatial('data/bbend_sg_diss.shp')
+sgrass <- readShapeSpatial('data/sgpts_820_2006.shp')
+sgrass <- sgrass[sample(1:nrow(sgrass), 2000, replace = F),]
+above <- sgrass[sgrass$GRID_CODE >= -2.619, ]
+below <- sgrass[sgrass$GRID_CODE < -2.619, ]
+
+par(mar=c(0,0,0,0))
+sp::plot(seg, border = 'white')
+sp::plot(state, add = T, col = pal(5)[3])
+sp::plot(seg, add = T)
+points(above, col = alpha(pal(5)[5], 0.5), pch = 16, cex = 0.6)
+points(below, col = alpha('black', 0.5), pch = 21, cex = 0.6)
+sp::plot(sgpoly, add = T, col = pal(5)[5], border = NA)
+legend('bottomleft', legend = 'Actual seagrass growth', fill = alpha(pal(5)[5]), border = alpha(pal(5)[1]))
+@
+\end{column}
+\end{columns}
+\end{frame}
+
+<<radani, eval = F, echo = F>>=
+set.seed(1234)
+seg <- readShapeSpatial('data/seg_820.shp')
+state <- readShapeSpatial('data/FL_state.shp')
+sgpoly <- readShapeSpatial('data/bbend_sg_diss.shp')
+sgrass <- readShapeSpatial('data/sgpts_820_2006.shp')
+sgrass <- sgrass[sample(1:nrow(sgrass), 2000, replace = F),]
+
+test_pt <- sgrass[sgrass$FID_1 == '138644',]
+
+# radii to eval
+rads <- rev(seq(0.05, 0.2, length = 40))
+
+# get doc by radius estimates for plot
+ests <- NULL
+for(rad in rads){
+
+  buff_pts <- buff_ext(sgrass, test_pt, buff = rad)
+
+  doc_in <- data.frame(buff_pts)
+  doc_in$GRID_CODE <- -1 * doc_in$GRID_CODE
+  doc <- doc_est(doc_in, depth_var = 'GRID_CODE', sg_var = 'SEAGRASS')
+  ests <- c(ests, doc$doc_med)
+  
+}
+
+pdf('fig/radred.pdf', height = 4.25, width = 9, family = 'serif')
+for(rad in rads){
+
+  par(mfrow = c(1, 2), mar = c(4.1, 4.1, 1, 4.1), family = 'serif')
+    
+  buff_pts <- buff_ext(sgrass, test_pt, buff = rad)  
+    
+  sp::plot(seg, border = 'white')
+  sp::plot(state, add = T, col = pal(5)[3])
+  sp::plot(seg, add = T)
+  points(buff_pts, pch = 16, col = alpha('red', 0.5), cex = 0.6)
+  points(test_pt, pch = 16, col = 'black', cex = 2.5)
+  legend('bottomleft', legend = c('Pt of interest', 'Depth pts in buffer'), pch = c(16, 16), col = c('black', 'red'), pt.cex = c(2.5, 1))
+  mtext(paste0("Radius from pt: ", round(rad, 2), " (dec. deg.)"), cex = 1.45, side = 1, line = 3)
+    
+  x <- rads
+  y <- ests
+  
+  ind <- which(rad == rads)
+  if(1 + ind > length(y)) y <- ests
+  else y[(1 + ind):length(y)] <- NA
+  plot(x, y, type = 'l', xlab = 'Radius from pt (dec. deg.)', ylab = 'Colonization estimate (m)', ylim = c(1, 3), xlim = rev(range(x)), 
+    bty = 'n', cex.lab = 1.45)
+
+}
+dev.off()
+    
+@
+%%%%%%
+\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
+If segment is not appropriate, can we define a spatial boundary for estimating seagrass depth of colonization?
+\begin{center}
+\animategraphics[controls,width=0.95\linewidth]{12}{fig/radred}{}{} %frame rate is 12 per/sec
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
+Why go through all this trouble? \\~\\
+Indicators should be developed to address specific needs 
+Indicators should also capitalize on the available data
+It's not really `trouble' - the approach is reproducible
+\end{frame}
+
+%%%%%%
+\section{References}
+\begin{frame}[allowframebreaks,t]{\textbf{References}}
+\tiny
+\setbeamertemplate{bibliography item}{}
+\bibliographystyle{apalike_mine}
+\bibliography{ref_diss}
+\end{frame}
+
+\end{document}
