@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  8 DEC 2014 10:52
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  9 DEC 2014 17:23
 entering extended mode
 **umces_int.tex
 (M:\presentations\umces_int\umces_int.tex
@@ -1463,13 +1463,13 @@ Package caption Info: End \AtBeginDocument code.
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 97.
 
-<fig/title_pic.png, id=42, 637.63219pt x 172.39406pt>
+<fig/title_pic.png, id=50, 637.63219pt x 172.39406pt>
 File: fig/title_pic.png Graphic file (type png)
  <use fig/title_pic.png>
 Package pdftex.def Info: fig/title_pic.png used on input line 113.
 (pdftex.def)             Requested size: 273.83728pt x 74.03592pt.
 
-<fig/back_tmp.pdf, id=44, 505.89pt x 505.89pt>
+<fig/back_tmp.pdf, id=52, 505.89pt x 505.89pt>
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
 Package pdftex.def Info: fig/back_tmp.pdf used on input line 113.
@@ -1486,73 +1486,73 @@ tions/umces_int/fig/back_tmp.pdf> <M:/presentations/umces_int/fig/title_pic.png
 >]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 127.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 128.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [2
 
-] <fig/theo.pdf, id=70, 361.35pt x 234.8775pt>
+] <fig/theo.pdf, id=80, 361.35pt x 234.8775pt>
 File: fig/theo.pdf Graphic file (type pdf)
 
 <use fig/theo.pdf>
-Package pdftex.def Info: fig/theo.pdf used on input line 141.
+Package pdftex.def Info: fig/theo.pdf used on input line 142.
 (pdftex.def)             Requested size: 188.26346pt x 122.36995pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 141.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 142.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [3
 
  <M:/presentations/umces_int/fig/theo.pdf>]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 153.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 155.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [4
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 153.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 155.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [5
 
 ]
-<fig/Rlogo.png, id=94, 87.2058pt x 66.2475pt>
+<fig/Rlogo.png, id=109, 87.2058pt x 66.2475pt>
 File: fig/Rlogo.png Graphic file (type png)
  <use fig/Rlogo.png>
-Package pdftex.def Info: fig/Rlogo.png used on input line 179.
+Package pdftex.def Info: fig/Rlogo.png used on input line 182.
 (pdftex.def)             Requested size: 68.45801pt x 52.00641pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 179.
+LaTeX Font Info:    Try loading font information for U+msa on input line 182.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 179.
+LaTeX Font Info:    Try loading font information for U+msb on input line 182.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<fig/RStudio.png, id=95, 2007.5pt x 704.6325pt>
+<fig/RStudio.png, id=110, 2007.5pt x 704.6325pt>
 File: fig/RStudio.png Graphic file (type png)
  <use fig/RStudio.png>
-Package pdftex.def Info: fig/RStudio.png used on input line 179.
+Package pdftex.def Info: fig/RStudio.png used on input line 182.
 (pdftex.def)             Requested size: 68.45801pt x 24.01955pt.
 
-<fig/knit-logo.png, id=96, 240.9pt x 165.61874pt>
+<fig/knit-logo.png, id=111, 240.9pt x 165.61874pt>
 File: fig/knit-logo.png Graphic file (type png)
  <use fig/knit-logo.png>
-Package pdftex.def Info: fig/knit-logo.png used on input line 179.
+Package pdftex.def Info: fig/knit-logo.png used on input line 182.
 (pdftex.def)             Requested size: 68.45801pt x 47.06284pt.
 
-<fig/octocat.png, id=97, 123.3408pt x 123.3408pt>
+<fig/octocat.png, id=112, 123.3408pt x 123.3408pt>
 File: fig/octocat.png Graphic file (type png)
  <use fig/octocat.png>
-Package pdftex.def Info: fig/octocat.png used on input line 179.
+Package pdftex.def Info: fig/octocat.png used on input line 182.
 (pdftex.def)             Requested size: 68.45801pt x 68.45871pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 179.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 182.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [6
 
@@ -1561,85 +1561,85 @@ udio.png> <M:/presentations/umces_int/fig/knit-logo.png> <M:/presentations/umce
 s_int/fig/octocat.png>]
 File: fig/Rlogo.png Graphic file (type png)
  <use fig/Rlogo.png>
-Package pdftex.def Info: fig/Rlogo.png used on input line 179.
+Package pdftex.def Info: fig/Rlogo.png used on input line 182.
 (pdftex.def)             Requested size: 68.45801pt x 52.00641pt.
 File: fig/RStudio.png Graphic file (type png)
 
 <use fig/RStudio.png>
-Package pdftex.def Info: fig/RStudio.png used on input line 179.
+Package pdftex.def Info: fig/RStudio.png used on input line 182.
 (pdftex.def)             Requested size: 68.45801pt x 24.01955pt.
 File: fig/knit-logo.png Graphic file (type png)
  <use fig/knit-logo.png>
-Package pdftex.def Info: fig/knit-logo.png used on input line 179.
+Package pdftex.def Info: fig/knit-logo.png used on input line 182.
 (pdftex.def)             Requested size: 68.45801pt x 47.06284pt.
 File: fig/octocat.png Graphic file (type png)
  <use fig/octocat.png>
-Package pdftex.def Info: fig/octocat.png used on input line 179.
+Package pdftex.def Info: fig/octocat.png used on input line 182.
 (pdftex.def)             Requested size: 68.45801pt x 68.45871pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 179.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 182.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [7
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 189.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 192.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [8
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 189.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 192.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
 
 [9
 
-] <fig//segmap.pdf, id=127, 289.08pt x 289.08pt>
+] <fig//segmap.pdf, id=147, 289.08pt x 289.08pt>
 File: fig//segmap.pdf Graphic file (type pdf)
  <use fig//segmap.pdf>
-Package pdftex.def Info: fig//segmap.pdf used on input line 212.
+Package pdftex.def Info: fig//segmap.pdf used on input line 215.
 (pdftex.def)             Requested size: 171.14764pt x 171.14679pt.
 
-<fig/Charlotte_Estuary_Segments.jpg, id=128, 117.5592pt x 163.3302pt>
+<fig/Charlotte_Estuary_Segments.jpg, id=148, 117.5592pt x 163.3302pt>
 File: fig/Charlotte_Estuary_Segments.jpg Graphic file (type jpg)
 
 <use fig/Charlotte_Estuary_Segments.jpg>
 Package pdftex.def Info: fig/Charlotte_Estuary_Segments.jpg used on input line 
-212.
+215.
 (pdftex.def)             Requested size: 123.22592pt x 171.20767pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 212.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 215.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [10
 
  <M:/presentations/umces_int/fig//segmap.pdf> <M:/presentations/umces_int/fig/C
-harlotte_Estuary_Segments.jpg>] <fig/map820.png, id=140, 572.1375pt x 636.87938
+harlotte_Estuary_Segments.jpg>] <fig/map820.png, id=161, 572.1375pt x 636.87938
 pt>
 File: fig/map820.png Graphic file (type png)
 
 <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 253.
+Package pdftex.def Info: fig/map820.png used on input line 256.
 (pdftex.def)             Requested size: 98.58263pt x 109.73547pt.
- <fig//segsg.pdf, id=141, 289.08pt x 289.08pt>
+ <fig//segsg.pdf, id=162, 289.08pt x 289.08pt>
 File: fig//segsg.pdf Graphic file (type pdf)
 
 <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 253.
+Package pdftex.def Info: fig//segsg.pdf used on input line 256.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
- <fig//segpt.pdf, id=142, 289.08pt x 289.08pt>
+ <fig//segpt.pdf, id=163, 289.08pt x 289.08pt>
 File: fig//segpt.pdf Graphic file (type pdf)
 
 <use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 253.
+Package pdftex.def Info: fig//segpt.pdf used on input line 256.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 253.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 256.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [11
 
@@ -1647,40 +1647,40 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 253.
 egsg.pdf> <M:/presentations/umces_int/fig//segpt.pdf>]
 File: fig/map820.png Graphic file (type png)
  <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 253.
+Package pdftex.def Info: fig/map820.png used on input line 256.
 (pdftex.def)             Requested size: 98.58263pt x 109.73547pt.
 File: fig//segsg.pdf Graphic file (type pdf)
  <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 253.
+Package pdftex.def Info: fig//segsg.pdf used on input line 256.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig//segpt.pdf Graphic file (type pdf)
 
 <use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 253.
+Package pdftex.def Info: fig//segpt.pdf used on input line 256.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 253.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 256.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [12
 
 ]
 File: fig/map820.png Graphic file (type png)
  <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 253.
+Package pdftex.def Info: fig/map820.png used on input line 256.
 (pdftex.def)             Requested size: 98.58263pt x 109.73547pt.
 File: fig//segsg.pdf Graphic file (type pdf)
 
 <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 253.
+Package pdftex.def Info: fig//segsg.pdf used on input line 256.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig//segpt.pdf Graphic file (type pdf)
  <use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 253.
+Package pdftex.def Info: fig//segpt.pdf used on input line 256.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 253.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 256.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [13
 
@@ -1688,64 +1688,64 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 253.
 File: fig/map820.png Graphic file (type png)
 
 <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 253.
+Package pdftex.def Info: fig/map820.png used on input line 256.
 (pdftex.def)             Requested size: 98.58263pt x 109.73547pt.
 File: fig//segsg.pdf Graphic file (type pdf)
  <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 253.
+Package pdftex.def Info: fig//segsg.pdf used on input line 256.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig//segpt.pdf Graphic file (type pdf)
  <use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 253.
+Package pdftex.def Info: fig//segpt.pdf used on input line 256.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 253.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 256.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [14
 
-] <fig//sg_est_ex.pdf, id=175, 722.7pt x 433.62pt>
+] <fig//sg_est_ex.pdf, id=196, 722.7pt x 433.62pt>
 File: fig//sg_est_ex.pdf Graphic file (type pdf)
 
 <use fig//sg_est_ex.pdf>
-Package pdftex.def Info: fig//sg_est_ex.pdf used on input line 266.
+Package pdftex.def Info: fig//sg_est_ex.pdf used on input line 269.
 (pdftex.def)             Requested size: 308.06367pt x 184.83853pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 266.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 269.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [15
 
- <M:/presentations/umces_int/fig//sg_est_ex.pdf>] <fig/sgdepthall.pdf, id=191, 
+ <M:/presentations/umces_int/fig//sg_est_ex.pdf>] <fig/sgdepthall.pdf, id=213, 
 505.89pt x 505.89pt>
 File: fig/sgdepthall.pdf Graphic file (type pdf)
 
 <use fig/sgdepthall.pdf>
-Package pdftex.def Info: fig/sgdepthall.pdf used on input line 275.
+Package pdftex.def Info: fig/sgdepthall.pdf used on input line 278.
 (pdftex.def)             Requested size: 188.26346pt x 188.26477pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 275.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 278.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [16
 
- <M:/presentations/umces_int/fig/sgdepthall.pdf>] <fig//docfail1.pdf, id=208, 2
+ <M:/presentations/umces_int/fig/sgdepthall.pdf>] <fig//docfail1.pdf, id=230, 2
 89.08pt x 289.08pt>
 File: fig//docfail1.pdf Graphic file (type pdf)
 
 <use fig//docfail1.pdf>
-Package pdftex.def Info: fig//docfail1.pdf used on input line 309.
+Package pdftex.def Info: fig//docfail1.pdf used on input line 312.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
- <fig//docfail2.pdf, id=209, 289.08pt x 289.08pt>
+ <fig//docfail2.pdf, id=231, 289.08pt x 289.08pt>
 File: fig//docfail2.pdf Graphic file (type pdf)
 
 <use fig//docfail2.pdf>
-Package pdftex.def Info: fig//docfail2.pdf used on input line 309.
+Package pdftex.def Info: fig//docfail2.pdf used on input line 312.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 309.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 312.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [17
 
@@ -1754,15 +1754,15 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 309.
 File: fig//docfail1.pdf Graphic file (type pdf)
 
 <use fig//docfail1.pdf>
-Package pdftex.def Info: fig//docfail1.pdf used on input line 309.
+Package pdftex.def Info: fig//docfail1.pdf used on input line 312.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig//docfail2.pdf Graphic file (type pdf)
  <use fig//docfail2.pdf>
-Package pdftex.def Info: fig//docfail2.pdf used on input line 309.
+Package pdftex.def Info: fig//docfail2.pdf used on input line 312.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 309.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 312.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [18
 
@@ -1770,15 +1770,15 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 309.
 File: fig//docfail1.pdf Graphic file (type pdf)
 
 <use fig//docfail1.pdf>
-Package pdftex.def Info: fig//docfail1.pdf used on input line 309.
+Package pdftex.def Info: fig//docfail1.pdf used on input line 312.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig//docfail2.pdf Graphic file (type pdf)
  <use fig//docfail2.pdf>
-Package pdftex.def Info: fig//docfail2.pdf used on input line 309.
+Package pdftex.def Info: fig//docfail2.pdf used on input line 312.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 309.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 312.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [19
 
@@ -1811,7 +1811,7 @@ ed.pdf> <39> <M:/presentations/umces_int/fig/radred.pdf> <40>
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 318.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 321.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [20
 
@@ -1843,7 +1843,7 @@ int/fig/radred2.pdf> <38> <M:/presentations/umces_int/fig/radred2.pdf> <39> <M:
 /presentations/umces_int/fig/radred2.pdf> <40>
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 327.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 330.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [21
 
@@ -1851,42 +1851,141 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 327.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 335.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 341.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [22
 
 ]
-No file umces_int.bbl.
+<fig/widget_ex.png, id=750, 863.47594pt x 574.39594pt>
+File: fig/widget_ex.png Graphic file (type png)
+ <use fig/widget_ex.png>
+Package pdftex.def Info: fig/widget_ex.png used on input line 347.
+(pdftex.def)             Requested size: 290.9531pt x 193.53911pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 347.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [23
+
+ <M:/presentations/umces_int/fig/widget_ex.png>]
+
+pdfTeX warning: pdflatex.exe (file M:/presentations/umces_int/fig/cb_seg.pdf): 
+PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<fig/cb_seg.pdf, id=757, 469.755pt x 794.97pt>
+File: fig/cb_seg.pdf Graphic file (type pdf)
+ <use fig/cb_seg.pdf>
+Package pdftex.def Info: fig/cb_seg.pdf used on input line 368.
+(pdftex.def)             Requested size: 102.68962pt x 173.77795pt.
+
+<fig/cb_dem.png, id=758, 469.755pt x 794.97pt>
+File: fig/cb_dem.png Graphic file (type png)
+ <use fig/cb_dem.png>
+Package pdftex.def Info: fig/cb_dem.png used on input line 368.
+(pdftex.def)             Requested size: 102.68962pt x 173.77795pt.
+
+
+pdfTeX warning: pdflatex.exe (file M:/presentations/umces_int/fig/cb_sea.pdf): 
+PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<fig/cb_sea.pdf, id=759, 469.755pt x 794.97pt>
+File: fig/cb_sea.pdf Graphic file (type pdf)
+ <use fig/cb_sea.pdf>
+Package pdftex.def Info: fig/cb_sea.pdf used on input line 368.
+(pdftex.def)             Requested size: 102.68962pt x 173.77795pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 368.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [24
+
+ <M:/presentations/umces_int/fig/cb_seg.pdf> <M:/presentations/umces_int/fig/cb
+_dem.png> <M:/presentations/umces_int/fig/cb_sea.pdf>] <fig/widget_cb.png, id=7
+74, 813.79031pt x 554.82281pt>
+File: fig/widget_cb.png Graphic file (type png)
+
+<use fig/widget_cb.png>
+Package pdftex.def Info: fig/widget_cb.png used on input line 374.
+(pdftex.def)             Requested size: 290.9531pt x 198.36458pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 374.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [25
+
+ <M:/presentations/umces_int/fig/widget_cb.png>] <fig/cb_all.pdf, id=782, 794.9
+7pt x 433.62pt>
+File: fig/cb_all.pdf Graphic file (type pdf)
+
+<use fig/cb_all.pdf>
+Package pdftex.def Info: fig/cb_all.pdf used on input line 387.
+(pdftex.def)             Requested size: 342.2953pt x 186.711pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 387.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [26
+
+ <M:/presentations/umces_int/fig/cb_all.pdf>]
+File: fig/Rlogo.png Graphic file (type png)
+ <use fig/Rlogo.png>
+Package pdftex.def Info: fig/Rlogo.png used on input line 411.
+(pdftex.def)             Requested size: 68.45801pt x 52.00641pt.
+File: fig/RStudio.png Graphic file (type png)
+ <use fig/RStudio.png>
+Package pdftex.def Info: fig/RStudio.png used on input line 411.
+(pdftex.def)             Requested size: 68.45801pt x 24.01955pt.
+File: fig/knit-logo.png Graphic file (type png)
+
+<use fig/knit-logo.png>
+Package pdftex.def Info: fig/knit-logo.png used on input line 411.
+(pdftex.def)             Requested size: 68.45801pt x 47.06284pt.
+File: fig/octocat.png Graphic file (type png)
+ <use fig/octocat.png>
+Package pdftex.def Info: fig/octocat.png used on input line 411.
+(pdftex.def)             Requested size: 68.45801pt x 68.45871pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 411.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [27
+
+]
+(M:\presentations\umces_int\umces_int.bbl)
+
+Class beamer Warning: Frame text is shrunk by a factor of 3.75519 percent inste
+ad of 0 percent on input line 420.
+
 File: fig/back_tmp.pdf Graphic file (type pdf)
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 344.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 420.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-Package atenddvi Info: Last page = 23.
- [23
+Package atenddvi Info: Last page = 28.
+ [28
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 346.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 422.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 422.
  (M:\presentations\umces_int\umces_int.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 346.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 346.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 422.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 422.
 Package rerunfilecheck Info: File `umces_int.out' has not changed.
-(rerunfilecheck)             Checksum: 9424435B2BE443B3E5CD403679E17E70;147.
+(rerunfilecheck)             Checksum: 35549B3C7326589DBDE0017E67E852EC;252.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 346.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 422.
  ) 
 Here is how much of TeX's memory you used:
- 28529 strings out of 493921
- 563503 string characters out of 3147282
- 668265 words of memory out of 3000000
- 31123 multiletter control sequences out of 15000+200000
+ 28670 strings out of 493921
+ 566693 string characters out of 3147282
+ 668490 words of memory out of 3000000
+ 31239 multiletter control sequences out of 15000+200000
  10167 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  49i,16n,73p,471b,804s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1894,12 +1993,12 @@ Here is how much of TeX's memory you used:
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr8.pfb>
-Output written on umces_int.pdf (23 pages, 48212055 bytes).
+onts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr9.pfb>
+Output written on umces_int.pdf (28 pages, 53673682 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 1679 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 850 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
+ 1731 words of extra memory for PDF output out of 10000 (max. 10000000)
 

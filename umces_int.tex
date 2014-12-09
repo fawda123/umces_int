@@ -116,7 +116,8 @@
 
 %%%%%%
 \begin{frame}{\textbf{Managing coastal waters}}{\textbf{How do we use data?}}
-The foundation of most management programs is a strong monitoring network \\~\\
+The foundation of most management programs is a strong monitoring network \scriptsize \cite{NRC90}\\~\\
+\normalsize
 Monitoring provides information for decision-making based on apparent trends...
 \vspace{0.2in}
 \begin{center}
@@ -148,8 +149,9 @@ We have the data but... \\~\\
 \emtxt{Challenge 2:} We often lack appropriate tools to unambiguously and quantitatively characterize trends \\~\\
 \emtxt{Challenge 3:} We may not have indicators to assess progress towards management goals \\~\\
 \onslide<+->
-These challenges are not impossible...\\~\\
-\emtxt{Solution:} The use of open-science tools can facilitate data acquisition, collaboration, and communication!
+These challenges are not impossible... \scriptsize \cite{Kelling09} \\~\\
+\normalsize
+\emtxt{Solution:} The use of open-science tools can facilitate data integration, assessment, and communication!
 \end{frame}
 
 \section{Seagrass indicators}
@@ -157,11 +159,12 @@ These challenges are not impossible...\\~\\
 %%%%%%
 \begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 \onslide<+->
-Seagrasses have long been considered sentinels of water quality \\~\\
+Seagrasses have long been considered sentinels of water quality \scriptsize \cite{Short96}\\~\\
+\normalsize
 Numerous ecosystem services - healthy seagrass, healthy eastuary \\~\\
 The following example illustrates the use of open-science tools to \emtxt{integrate}, \emtxt{assess}, and \emtxt{communicate} data for evaluating seagrass indicators \\~\\
 \onslide<+->
-Open-science is \emtxt{reproducible}, \emtxt{transparent}, and \emtxt{collaborative}!
+Open-science is \emtxt{reproducible}, \emtxt{transparent}, and \emtxt{collaborative} \scriptsize \cite{Molloy09} \normalsize
 \begin{columns}
 \begin{column}{0.2\textwidth}
 \centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
@@ -181,17 +184,17 @@ Open-science is \emtxt{reproducible}, \emtxt{transparent}, and \emtxt{collaborat
 %%%%%%
 \begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 \onslide<+->
-The maximum depth of colonization is a useful indicator of water clarity - biologically-based and related to numerous response endpoints \\~\\
+The maximum depth of colonization is a useful indicator of water clarity -- biologically-based and related to numerous response endpoints \\~\\
 Often used as a basis for establishing nutrient criteria \\~\\
 \onslide<+->
 \emtxt{Problem 1:} No consensus on the best way to measure depth of colonization\\~\\
-\emtxt{Problem 2:} Plenty of data are available but standardized techniques have not been developed
+\emtxt{Problem 2:} Plenty of data are available but standardized and flexible techniques have not been developed
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 \onslide<+->
-\emtxt{Objective:} Develop a reproducible and empirical method for estimating depth of colonization that leverages multiple data sources
+\emtxt{Objective:} Develop a reproducible and empirical method for estimating depth of colonization, builds on ideas in \cite{HagyIR}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
 \begin{knitrout}
@@ -212,7 +215,7 @@ Often used as a basis for establishing nutrient criteria \\~\\
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 \onslide<+->
 How can we estimate depth of colonization? \\~\\
 \begin{columns}[T]
@@ -252,7 +255,7 @@ Get depth points\\~\\
 \end{columns}
 \end{frame}
 
-\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 \onslide<+->
 How can we estimate depth of colonization? \\~\\
 
@@ -268,14 +271,14 @@ How can we estimate depth of colonization? \\~\\
 
 
 %%%%%%
-\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
-We can get an estimate of seagrass depth of colonization for each segment in Florida \scriptsize [Hagy et al., in prep]
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+We can get an estimate of seagrass depth of colonization for each segment in Florida \scriptsize \cite{HagyIR}
 \vspace{-0.25in}
 \centerline{\includegraphics[width = 0.55\textwidth]{fig/sgdepthall.pdf}}
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 \onslide<+->
 This approach works if the segment is an appropriate spatial unit to characterize seagrass...
 \begin{columns}[T]
@@ -310,7 +313,7 @@ This approach works if the segment is an appropriate spatial unit to characteriz
 
 
 %%%%%%
-\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 If segment is not appropriate, can we define a spatial boundary for estimating seagrass depth of colonization?
 \begin{center}
 \animategraphics[controls,width=0.95\linewidth]{12}{fig/radred}{}{} %frame rate is 12 per/sec
@@ -319,7 +322,7 @@ If segment is not appropriate, can we define a spatial boundary for estimating s
 
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 This can be repeated for a number of points until we get estimates that make sense
 \begin{center}
 \animategraphics[controls,width=0.95\linewidth]{12}{fig/radred2}{}{} %frame rate is 12 per/sec
@@ -327,17 +330,90 @@ This can be repeated for a number of points until we get estimates that make sen
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Seagrass and water quality}}{\textbf{Making the most of data}}
-Why go through all this trouble? \\~\\
-Indicators should be developed to address specific needs 
-Indicators should also capitalize on the available data
-It's not really `trouble' - the approach is reproducible
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+Benefits of the approach \\~\\
+\begin{itemize}
+\item The spatial unit for any estimate of seagrass growth limit is problem-specific \\~\\
+\item Allows for a `compliance-point' approach (saves time/money) \\~\\
+\item Increased understanding of seagrass growth patterns - natural and anthropogenic drivers \\~\\
+\item Results are \emtxt{communicable}...
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+\centerline{\href{https://beckmw.shinyapps.io/sg_depth/}{https://beckmw.shinyapps.io/sg\_depth/}}
+\centerline{\includegraphics[width = 0.85\textwidth]{fig/widget_ex.png}}
+\end{frame}
+
+\section{Chesapeake Bay example}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+More importantly, the approach is \emtxt{reproducible}! \\~\\
+\begin{columns}
+\begin{column}{0.3\textwidth}
+Boundaries
+\centerline{\includegraphics[width = \textwidth]{fig/cb_seg.pdf}}
+\end{column}
+\begin{column}{0.3\textwidth}
+Depth
+\centerline{\includegraphics[width = \textwidth]{fig/cb_dem.png}}
+\end{column}
+\begin{column}{0.3\textwidth}
+Seagrass
+\centerline{\includegraphics[width = \textwidth]{fig/cb_sea.pdf}}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+\centerline{\href{https://beckmw.shinyapps.io/cb_seagrass/}{https://beckmw.shinyapps.io/cb\_seagrass/}}
+\centerline{\includegraphics[width = 0.85\textwidth]{fig/widget_cb.png}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
+These are powerful tools...
+
+
+{\centering \includegraphics[width=\textwidth]{fig/cb_all} 
+
+}
+
+
+
+\end{frame}
+
+\section{Conclusions}
+
+%%%%%%
+\begin{frame}{\textbf{Conclusions}}
+Indicator development for goal assessment is problem-specific - tools will need to capitalize on available data to address questions of need \\~\\
+The seagrass example illustrates that \emtxt{reproducible}, \emtxt{transparent}, and \emtxt{collaborative} methods can be developed \\~\\
+Results can also guide future decisions - management actions or additional data needs \\~\\
+Complexity is a challenge that can be mitigated through \emtxt{open-science}
+\begin{columns}
+\begin{column}{0.2\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
+\end{column}
+\begin{column}{0.2\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/RStudio.png}}
+\end{column}
+\begin{column}{0.2\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/knit-logo.png}}
+\end{column}
+\begin{column}{0.2\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/octocat.png}}
+\end{column}
+\end{columns}
 \end{frame}
 
 %%%%%%
 \section{References}
-\begin{frame}[allowframebreaks,t]{\textbf{References}}
-\tiny
+\begin{frame}[t, shrink]{\textbf{References}}
+\footnotesize
 \setbeamertemplate{bibliography item}{}
 \bibliographystyle{apalike_mine}
 \bibliography{ref_diss}
