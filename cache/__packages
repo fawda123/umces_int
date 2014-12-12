@@ -12,6 +12,7 @@ plyr
 raster
 RColorBrewer
 reshape
+reshape2
 rgeos
 scales
 sp

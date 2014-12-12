@@ -95,7 +95,10 @@ max_est <- function(dat_in, depth_var = 'depth', sg_var = 'seagrass',
 	# order by depth, assumes column is negative
   dat_in <- dat_in[order(dat_in[, depth_var], decreasing = T), ]
 	dat_in$depth <- dat_in[, depth_var]
-	
+  
+  # bin depth values
+  dat_in[, depth_var] <- round(dat_in[, depth_var], 1)
+  
 	# cumulative sum of pts with all seagrass and all points
 	# assumes NA is empty
 	sg_pts <- rev(table(dat_in[!is.na(dat_in[, sg_var]), depth_var]))
@@ -146,6 +149,9 @@ doc_est <- function(dat_in, depth_var = 'Depth', sg_var = 'Seagrass', sg_cat = c
   # order by depth, assumes column is negative
   dat_in <- dat_in[order(dat_in[, depth_var], decreasing = T), ]
 	dat_in$depth <- dat_in[, depth_var]
+  
+  # bin depth values
+  dat_in[, depth_var] <- round(dat_in[, depth_var], 1)
 	
 	# cumulative sum of pts with all seagrass and all points
 	# assumes NA is empty

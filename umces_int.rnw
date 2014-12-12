@@ -90,7 +90,7 @@ theme_set(theme_mine())
 \title[Evaluating water quality]{\textbf{A quantitative and reproducible approach to evaluate trends in seagrass indicators}}
 \author[M. Beck]{Dr. Marcus W. Beck}
 
-\institute[USEPA]{ORISE post-doc, USEPA National Health and Environmental Effects Research Laboratory, Gulf Ecology Division, \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov}, Phone: 8509342480}
+\institute[ORISE]{ORISE post-doc, USEPA National Health and Environmental Effects Research Laboratory, Gulf Ecology Division, \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov}, Phone: 8509342480}
 
 \date{Dec. 15, 2014}
 
@@ -158,7 +158,7 @@ These challenges are not impossible... \scriptsize \cite{Kelling09} \\~\\
 \onslide<+->
 Seagrasses have long been considered sentinels of water quality \scriptsize \cite{Short96}\\~\\
 \normalsize
-Numerous ecosystem services - healthy seagrass, healthy eastuary \\~\\
+Numerous ecosystem services - healthy seagrass, healthy estuary \\~\\
 The following example illustrates the use of open-science tools to \emtxt{integrate}, \emtxt{assess}, and \emtxt{communicate} data for evaluating seagrass indicators \\~\\
 \onslide<+->
 Open-science is \emtxt{reproducible}, \emtxt{transparent}, and \emtxt{collaborative} \scriptsize \cite{Molloy09} \normalsize
@@ -608,20 +608,33 @@ Seagrass
 %%%%%%
 \begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 \centerline{\href{https://beckmw.shinyapps.io/cb_seagrass/}{https://beckmw.shinyapps.io/cb\_seagrass/}}
-\centerline{\includegraphics[width = 0.85\textwidth]{fig/widget_cb.png}}
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/widget_cb.png}}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Seagrasses and water quality}}{\textbf{Making the most of data}}
 These are powerful tools...
 <<cb_all, fig.height = 6, fig.width = 11, out.width = '\\textwidth', fig.align = 'center', message = F, cache = T>>=
+# packages to use
+library(maptools)
+library(reshape2) 
+library(plyr)
+library(ggplot2)
+library(scales)
+library(RColorBrewer)
+library(gridExtra)
+library(sp)
+
+# functions to use
+source('R/funcs.R')
+
 # load data
 bounds <- readShapeSpatial('data/cb_poly.shp')
 segs <- readShapeSpatial('data/sg_segs.shp')
 sgbuff <- readShapeSpatial('data/grid_polys.shp')
-# load('dat/sgpts.RData')
-
-# # get estimates for whole bay
+# load('data/sgpts.RData')
+# 
+# # get all bay estimates
 # grid_spc <- 0.01
 # radius <- 0.1
 # grid_seed <- 1234
@@ -630,7 +643,7 @@ sgbuff <- readShapeSpatial('data/grid_polys.shp')
 # pts <- grid_est(sgbuff, spacing = grid_spc) 
 # tmp <- doc_est_grd(pts, sgpts, trace = T)
 # sg_ests <- tmp
-# save(sg_ests, file = 'dat/sg_ests.RData')
+# save(sg_ests, file = 'data/sg_ests.RData')
 
 load(file = 'data/sg_ests.RData')
 sg_ests <- data.frame(sg_ests)
@@ -647,34 +660,24 @@ p1 <- ggplot(bounds, aes(long, lat)) +
     data = data.frame(sg_ests),
     aes(x = Var1, y = Var2, colour = doc_max, size = doc_max), 
   ) +
-  scale_colour_gradientn(colours = brewer.pal(9, 'BuGn')) +
+  scale_colour_gradientn(colours = brewer.pal(9, 'BuGn')[3:9]) +
   scale_size_continuous(range = c(1, 10)) +
   theme(
     text = element_text(size=20), 
     legend.position = c(0, 1),
-    legend.justification = c(0, 1), 
-    plot.background = element_rect(fill='transparent', 
-      colour = NA),
-    panel.background = element_rect(fill='transparent', 
-      colour = NA),
-    legend.background = element_rect(fill='transparent', 
-      colour = NA),
-    strip.background = element_rect(fill = 
-        alpha(pal(5)[5],0.5)),
-    legend.key = element_rect(fill = 'transparent', 
-      colour = NA)
+    legend.justification = c(0, 1)
     ) +
   labs(colour = 'Depth (m)', size = 'Depth (m)') + 
-  guides(colour = guide_legend(), size = guide_legend())
+  guides(colour = guide_legend(), size = guide_legend()) +
+  theme_mine()
 
 load(file = 'data/sg_ests.RData')
+segs <- readShapeSpatial('data/sg_segs.shp')
 filt_val <- quantile(sg_ests$doc_max, 0.9)
 sg_ests <- sg_ests[sg_ests$doc_max <= filt_val, ]
-
-segs <- readShapeSpatial('data/sg_segs.shp')
-tmp <- over(segs, sg_ests, fn = function(x) mean(x, na.rm = T))
+tmp <- over(segs, sg_ests, fn = function(x) median(x, na.rm = T))
 sg_ests <- na.omit(data.frame(CBPSEG = segs@data$CBPSEG, tmp))
-sg_ests <- aggregate(. ~ CBPSEG, sg_ests, function(x) mean(x, na.rm = T))
+sg_ests <- aggregate(. ~ CBPSEG, sg_ests, function(x) median(x, na.rm = T))
 sg_ests <- sp::merge(segs, sg_ests, by = 'CBPSEG', all.x = T)
 
 segs_plo <- fortify(sg_ests)
@@ -687,23 +690,14 @@ p2 <- ggplot(bounds, aes(long, lat, group = piece)) +
   coord_equal() +
   xlab('Longitude') +
   ylab('Latitude') +
-  scale_fill_gradientn(colours = brewer.pal(9, 'BuGn')) +
+  scale_fill_gradientn(colours = brewer.pal(9, 'BuGn')[3:9]) +
   theme(
     text = element_text(size=20), 
     legend.position = c(0, 1),
-    legend.justification = c(0, 1),
-    plot.background = element_rect(fill='transparent', 
-      colour = NA),
-    panel.background = element_rect(fill='transparent', 
-      colour = NA),
-    legend.background = element_rect(fill='transparent', 
-      colour = NA),
-    strip.background = element_rect(fill = 
-        alpha(pal(5)[5],0.5)),
-    legend.key = element_rect(fill = 'transparent', 
-      colour = NA)
+    legend.justification = c(0, 1)
     ) +
-  labs(fill = 'Depth (m)') 
+  labs(fill = 'Depth (m)') + 
+  theme_mine()
 
 grid.arrange(p1, p2, ncol = 2)
 
